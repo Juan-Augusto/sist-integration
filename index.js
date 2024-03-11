@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const axios = require("axios");
-
+const dotenv = require("dotenv");
 const app = express();
 const PORT = 3000;
 
@@ -10,7 +10,8 @@ app.use(bodyParser.json());
 
 // Dados simulados de alertas
 let alerts = [];
-
+const TELEGRAM_BOT_TOKEN = dotenv.config().parsed.TELEGRAM_BOT_TOKEN;
+const TELEGRAM_CHAT_ID = dotenv.config().parsed.TELEGRAM_CHAT_ID;
 // Função para enviar mensagem para o bot do Telegram
 async function sendTelegramMessage(message) {
   try {
@@ -21,15 +22,12 @@ async function sendTelegramMessage(message) {
         text: message,
       }
     );
-    console.log("Mensagem enviada com sucesso para o Telegram:", message);
   } catch (error) {
     console.error("Erro ao enviar mensagem para o Telegram:", error);
   }
 }
 
-// Rota padrão para exibir as tabs
 app.get("/", (req, res) => {
-  // HTML para exibir as tabs de alertas e pull requests
   const html = `
     <html>
       <head>
