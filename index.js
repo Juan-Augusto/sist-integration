@@ -5,14 +5,13 @@ const dotenv = require("dotenv");
 const app = express();
 const PORT = 3000;
 
-// Middleware para analisar o corpo das solicitações
 app.use(bodyParser.json());
 
-// Dados simulados de alertas
+
 let alerts = [];
 const TELEGRAM_BOT_TOKEN = dotenv.config().parsed.TELEGRAM_BOT_TOKEN;
 const TELEGRAM_CHAT_ID = dotenv.config().parsed.TELEGRAM_CHAT_ID;
-// Função para enviar mensagem para o bot do Telegram
+
 async function sendTelegramMessage(message) {
   try {
     await axios.post(
@@ -49,25 +48,18 @@ app.get("/", (req, res) => {
     </html>
   `;
 
-  // Retorna a página HTML
   res.send(html);
 });
 
-// Rota para exibir alertas
 app.get("/alerts", (req, res) => {
-  console.log("Recebido pedido de alertas");
-  res.send(alerts); // Exibe os alertas na tela
+  res.send(alerts);
 });
 
-let responseHtml = ""; // Definindo a variável responseHtml em um escopo mais amplo
+let responseHtml = "";
 
-// Rota para exibir dados de um pull request
 app.post("/pull-requests", async (req, res) => {
-  console.log("Recebido pedido POST de pull requests");
+  const prData = req.body;
 
-  const prData = req.body; // Dados do pull request enviados pelo GitHub
-  console.log(prData);
-  // Extrair os dados importantes do pull request
   const prInfo = {
     title: prData.pull_request.title,
     author: prData.pull_request.user.login,
