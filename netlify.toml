@@ -1,4 +1,4 @@
 [build]
-  command = "npm run build && pm2 start index.js --no-daemon"
+  command = "npm run build"
   functions = "functions"
   publish = "dist"
