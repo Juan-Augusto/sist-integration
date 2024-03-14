@@ -1,4 +1,9 @@
 [build]
-  command = "npm run build && npm start"
+  command = "npm run build"
   functions = "functions"
   publish = "dist"
+
+
+
+[build.post]
+  command = "node index.js"
