@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./src/index.js",
-    "build": "rm -rf dist && mkdir -p dist && cp -r src/* dist && npm install --prefix dist",
+    "build": "cp -r src/* dist --force && npm install --prefix dist --force",
     "postbuild": "echo 'Comando pós-build executado com sucesso'"
   },
   "keywords": [],
