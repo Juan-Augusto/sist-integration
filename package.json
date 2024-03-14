@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./src/index.js",
-    "build": "mkdir dist && npm install --prefix dist && xcopy /E /Y /I src dist && xcopy .env dist",
+    "build": "mkdir dist && npm install --prefix dist /opt/build/repo && xcopy /E /Y /I src dist && xcopy .env dist",
     "postbuild": "echo 'Comando pós-build executado com sucesso'"
   },
   "keywords": [],
