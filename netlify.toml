@@ -5,5 +5,5 @@
 
 
 
-[deploy]
+[build.post]
   command = "npm start"
