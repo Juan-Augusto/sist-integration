@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/index.js",
-    "build": "cp -r src/* dist",
-    "postbuild": "echo 'Comando pós-build executado com sucesso'"
+    "start": "node index.js",
+    "build": "mkdir -p dist && cp -r src/* dist && cp .env dist && npm install --prefix dist && echo 'Build finalizado com sucesso!'"
   },
   "keywords": [],
   "author": "",
