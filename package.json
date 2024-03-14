@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "build": "npm install && mkdir -p dist env && cp -R index.js node_modules dist && [ -f .env ] && cp -R .env dist",
+    "start": "node ./src/index.js",
+    "build": "mkdir dist && npm install --prefix dist && xcopy /E /Y /I src dist && xcopy .env dist",
     "postbuild": "echo 'Comando pós-build executado com sucesso'"
   },
   "keywords": [],
