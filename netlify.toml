@@ -5,5 +5,5 @@
 
 
 
-[build.post]
-  command = "node index.js"
+[deploy]
+  command = "npm start"
