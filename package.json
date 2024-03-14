@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./src/index.js",
-    "build": "cp -r src/* dist --force && npm install --prefix dist --force",
+    "build": "cp -r src/* dist",
     "postbuild": "echo 'Comando pós-build executado com sucesso'"
   },
   "keywords": [],
