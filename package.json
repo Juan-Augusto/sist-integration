@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./src/index.js",
     "build": "mkdir -p dist && npm run post-setup",
-    "post-setup": "cp -r src/* dist && npm install --prefix dist && npm run build --prefix dist",
+    "post-setup": "cp -r src/* dist && npm install --prefix dist",
     "postbuild": "echo 'Comando pós-build executado com sucesso'"
   },
   "keywords": [],
