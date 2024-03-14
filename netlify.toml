@@ -6,4 +6,4 @@
 
 
 [build.post]
-  command = "node index.js"
+  command = "npm start"
