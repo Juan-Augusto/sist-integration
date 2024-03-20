@@ -6,8 +6,6 @@ const app = express();
 const PORT = 3000;
 
 app.use(bodyParser.json());
-
-
 let alerts = [];
 const TELEGRAM_BOT_TOKEN = dotenv.config().parsed.TELEGRAM_BOT_TOKEN;
 const TELEGRAM_CHAT_ID = dotenv.config().parsed.TELEGRAM_CHAT_ID;
