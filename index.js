@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const axios = require("axios");
 const dotenv = require("dotenv");
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 let alerts = [];
